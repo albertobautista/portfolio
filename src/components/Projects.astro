@@ -1,0 +1,106 @@
+---
+import Github from "@/icons/Github.astro";
+import Link from "@/icons/Link.astro";
+
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  image: string;
+  github: string;
+  url: string;
+}
+const PROJECTS: Project[] = [
+  {
+    title: "Live News App",
+    description:
+      "In this app you can find the latest news about differents categories as: Business, Entertainment, Health, Science, Sports and Technology",
+    tech: [
+      "NextJS",
+      "Typescript",
+      "Tailwind CSS",
+      "GraphQL",
+      "StepZen",
+      "Vercel Deployment",
+    ],
+    image: "/img/projects/live_news.webp",
+    github: "https://github.com/albertobautista/live-news-nextjs13",
+    url: "https://live-news-nextjs13.vercel.app/",
+  },
+  {
+    title: "Club Valle Real de Guadalajara",
+    description:
+      "CLub Valle Real de Guadalajara is a private club located in Zapopan, Jalisco, Mexico. This is the official website of the club.",
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    image: "/img/projects/club_valle_real.webp",
+    github: "https://github.com/albertobautista/",
+    url: "https://clubvallereal.com/v6/",
+  },
+  {
+    title: "Baag Landscaping",
+    description:
+      "Baag Landscaping is a company dedicated to the design and construction of gardens and green areas. This is the official website of the company.",
+    tech: ["HTML5", "CSS3", "PHP", "JavaScript"],
+    image: "/img/projects/baag_landscapging.webp",
+    github: "https://github.com/albertobautista/",
+    url: "https://baag-landscaping.com.mx/",
+  },
+];
+---
+
+<div class="flex w-full flex-col items-center justify-between gap-10 mt-10">
+  <p class="text-xl tracking-widest font-medium">Most recent projects</p>
+  {
+    PROJECTS.map((project) => {
+      return (
+        <div class="w-full flex flex-col items-center justify-center gap-28 mt-4">
+          <div class={`flex flex-col xl:flex-row gap-6`}>
+            <a
+              href="http://www.google.com"
+              target="_blank"
+              class="w-full xl:w-1/2 h-auto group items-center justify-center flex"
+            >
+              <div>
+                <img
+                  src={project.image}
+                  alt="amazon"
+                  class="w-full h-full object-contain rounded-xl sm:rounded-xl"
+                />
+              </div>
+            </a>
+            <div class="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end   z-10">
+              <p class="font-titleFont text-orange text-sm tracking-wide">
+                Featured Project
+              </p>
+              <h3 class="text-2xl font-bold">{project.title}</h3>
+              <p class="bg-[#EAEDF7] dark:bg-[#112240] text-sm md:text-base text-black/80 dark:text-white p-2 md:p-6 rounded-md">
+                {project.description}
+              </p>
+              <ul class="flex flex-wrap text-xs md:text-sm font-titleFont tracking-wide gap-2 md:gap-5 justify-between text-black/80 dark:text-white/80">
+                {project.tech.map((tech) => (
+                  <li>{tech}</li>
+                ))}
+              </ul>
+              <div class="text-2xl flex gap-4">
+                <a
+                  href={project.github}
+                  class="hover:text-orange duration-300"
+                  target="_blank"
+                >
+                  <Github />
+                </a>
+                <a
+                  href={project.url}
+                  class="hover:text-orange duration-300"
+                  target="_blank"
+                >
+                  <Link />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
