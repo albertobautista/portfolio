@@ -1,0 +1,46 @@
+---
+import Badge from "@/components/Badge.astro";
+import SocialButton from "@/components/SocialButton.astro";
+import MailIcon from "@/icons/Mail.astro";
+import LinkedinIcon from "@/icons/Linkedin.astro";
+import Briefcase from "@/icons/Briefcase.astro";
+---
+
+<div class="max-w-2xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-2xl shadow-lg size-24"
+      src="./img/profilePicture.webp"
+      alt="Alberto Chávez Bautista"
+    />
+    <Badge>Software Enginneer</Badge>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Daniel Alberto Chávez Bautista
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-orange [&>strong]:text-orange [&>strong]:font-semibold dark:text-gray-300"
+  >
+    I'm a person passionate about technology who likes to investigate how the
+    world is changing with the use of it. I'm a person who likes to constantly
+    train to <strong>improve personally and professionally</strong>.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8 xl:hidden">
+    <SocialButton href="mailto:dachb_10@hotmail.com">
+      <MailIcon class="size-4" />
+      Contact me
+    </SocialButton>
+    <SocialButton href="https://www.linkedin.com/in/albertobautistac/">
+      <LinkedinIcon class="size-4" />
+      Linkedin
+    </SocialButton>
+    <SocialButton
+      href="https://drive.google.com/file/d/1noxhut3s5qY00NPKkVQ2rx1QTi0-iCsn/view?usp=drive_linkf"
+    >
+      <Briefcase class="size-4" />
+      Resume
+    </SocialButton>
+  </nav>
+</div>
