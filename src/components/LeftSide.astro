@@ -1,0 +1,40 @@
+---
+import Github from "@/icons/Github.astro";
+import Linkedin from "@/icons/Linkedin.astro";
+import Mail from "@/icons/Mail.astro";
+
+const SOCIAL_LINKS = [
+  {
+    name: "Github",
+    link: "https://github.com/albertobautista",
+    component: Github,
+  },
+  {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/albertobautistac/",
+    component: Linkedin,
+  },
+  {
+    name: "Mail",
+    link: "mailto:dachb_10@hotmail.com",
+    component: Mail,
+  },
+];
+---
+
+<div
+  class="w-full h-full flex flex-col items-center justify-end gap-4 text-[#525356] dark:text-white"
+>
+  <div class="flex flex-col gap-4">
+    {
+      SOCIAL_LINKS.map((link) => (
+        <a href={link.link} target="_blank">
+          <span class="w-10 h-10 text-xl bg-[#EAEDF7] rounded-full dark:bg-orange/80 inline-flex items-center justify-center hover:text-orange-500 cursor-pointer hover:-translate-y-2 transition-all duration-300">
+            <link.component />
+          </span>
+        </a>
+      ))
+    }
+  </div>
+  <div class="w-[2px] h-44 bg-[#525356]"></div>
+</div>
