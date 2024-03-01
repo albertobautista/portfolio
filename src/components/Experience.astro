@@ -1,0 +1,103 @@
+---
+import Jest from "@/icons/Jest.astro";
+import Nextjs from "@/icons/Nextjs.astro";
+import Tailwind from "@/icons/Tailwind.astro";
+import Html from "@/icons/Html.astro";
+import Css from "@/icons/Css.astro";
+import TypeScript from "@/icons/TypeScript.astro";
+import MySql from "@/icons/MySql.astro";
+import Git from "@/icons/Git.astro";
+import React from "@/icons/React.astro";
+import AstroIcon from "@/icons/AstroIcon.astro";
+import NestJS from "@/icons/Nestjs.astro";
+import POSTGRESQL from "@/icons/Postgresql.astro";
+import JavaScript from "@/icons/JavaScript.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-[#003159] text-white",
+    icon: Nextjs,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#003159] text-white",
+    icon: Html,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-white",
+    icon: Css,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#003159] text-white",
+    icon: TypeScript,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#003159] text-white",
+    icon: MySql,
+  },
+  GIT: {
+    name: "Git",
+    class: "bg-[#003159] text-white",
+    icon: Git,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: AstroIcon,
+  },
+  NESTJS: {
+    name: "Nest.js",
+    class: "bg-[#003159] text-white",
+    icon: NestJS,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript (ES6+)",
+    class: "bg-[#003159] text-white",
+    icon: JavaScript,
+  },
+  JEST: {
+    name: "Jest",
+    class: "bg-[#003159] text-white",
+    icon: Jest,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#003159] text-white",
+    icon: POSTGRESQL,
+  },
+};
+---
+
+<div class="flex flex-col lgl:flex-row gap-16">
+  <div
+    class="w-full gl:w-1/3 text-base text-text-dark dark:text-textLight font-medium flex flex-col gap-4"
+  >
+    <p>Here a few technologies I have been working recently:</p>
+    <ul
+      class="flex-wrap text-base font-titleFont grid grid-cols-2 md:grid-cols-4 gap-4 mt-6"
+    >
+      {
+        Object.values(TAGS).map((tag) => (
+          <li class="flex items-center gap-3">
+            <tag.icon class="size-6" />
+            <span class="text-md">{tag.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
