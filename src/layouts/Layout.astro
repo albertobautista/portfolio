@@ -1,9 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Header from "@/components/Header.astro";
-import LeftSide from "@/components/LeftSide.astro";
-import RightSide from "@/components/RightSide.astro";
-import Footer from "@/components/Footer.astro";
+import LeftSide from "@/sections/LeftSide.astro";
+import RightSide from "@/sections/RightSide.astro";
+import Footer from "@/sections/Footer.astro";
 import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 
 interface Props {
@@ -41,7 +41,7 @@ const { title, description } = Astro.props;
         <slot />
         <Footer />
       </div>
-      <div class="hidden xl:inline-flex w-80 h-full fixed right-0 bottom-0">
+      <div class="hidden xl:inline-flex w-54 h-full fixed right-20 bottom-0">
         <RightSide />
       </div>
       <style is:global>
