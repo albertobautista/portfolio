@@ -48,7 +48,7 @@ const PROJECTS: Project[] = [
 ];
 ---
 
-<div class="flex w-full flex-col items-center justify-between gap-10 mt-10">
+<div class="flex w-full flex-col items-center justify-between gap-8 mt-2">
   <p class="text-xl tracking-widest font-medium">Most recent projects</p>
   {
     PROJECTS.map((project) => {
@@ -56,7 +56,7 @@ const PROJECTS: Project[] = [
         <div class="w-full flex flex-col items-center justify-center gap-28 mt-4">
           <div class={`flex flex-col xl:flex-row gap-6`}>
             <a
-              href="http://www.google.com"
+              href={project.url}
               target="_blank"
               class="w-full xl:w-1/2 h-auto group items-center justify-center flex"
             >
