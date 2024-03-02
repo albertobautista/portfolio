@@ -7,9 +7,11 @@ import MoonIcon from "@/icons/Moon.astro";
   id="themeToggle"
   class="inline-flex text-primary transition hover:scale-125 hover:opacity-70"
 >
-  <SunIcon class="opacity-100 transition-transform dark:opacity-0" />
+  <SunIcon
+    class="opacity-100 transition-transform dark:opacity-0 text-orange"
+  />
   <MoonIcon
-    class="absolute opacity-0 transition-transform dark:rotate-0 dark:opacity-100"
+    class="absolute opacity-0 transition-transform dark:rotate-0 text-yellow-100 dark:opacity-100"
   />
   <span class="sr-only">Alternar tema</span>
 </button>
