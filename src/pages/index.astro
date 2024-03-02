@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Section from "@/components/Section.astro";
-import Hero from "@/components/Hero.astro";
-import Experience from "@/components/Experience.astro";
+import Hero from "@/sections/Hero.astro";
+import Experience from "@/sections/Experience.astro";
 import Briefcase from "@/icons/Briefcase.astro";
 import CodeIcon from "@/icons/Code.astro";
-import Projects from "@/components/Projects.astro";
+import Projects from "@/sections/Projects.astro";
+import ButtonUp from "@/components/ButtonUp.astro";
 ---
 
 <Layout
@@ -36,5 +37,6 @@ import Projects from "@/components/Projects.astro";
       </h2>
       <Projects />
     </Section>
+    <ButtonUp />
   </div>
 </Layout>
