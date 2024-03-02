@@ -1,6 +1,6 @@
 ---
 import Jest from "@/icons/Jest.astro";
-import Nextjs from "@/icons/Nextjs.astro";
+import Nextjs from "@/icons/NextJS.astro";
 import Tailwind from "@/icons/Tailwind.astro";
 import Html from "@/icons/Html.astro";
 import Css from "@/icons/Css.astro";
@@ -12,6 +12,9 @@ import AstroIcon from "@/icons/AstroIcon.astro";
 import NestJS from "@/icons/Nestjs.astro";
 import POSTGRESQL from "@/icons/Postgresql.astro";
 import JavaScript from "@/icons/JavaScript.astro";
+import GraphQL from "@/icons/GraphQL.astro";
+import ReactQuery from "@/icons/ReactQuery.astro";
+import Redux from "@/icons/Redux.astro";
 
 const TAGS = {
   NEXT: {
@@ -79,6 +82,21 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: POSTGRESQL,
   },
+  GRAPHQL: {
+    name: "GraphQL",
+    class: "bg-[#003159] text-white",
+    icon: GraphQL,
+  },
+  REACTQUERY: {
+    name: "React Query",
+    class: "bg-[#003159] text-white",
+    icon: ReactQuery,
+  },
+  REDUX: {
+    name: "Redux",
+    class: "bg-[#003159] text-white",
+    icon: Redux,
+  },
 };
 ---
 
@@ -91,12 +109,14 @@ const TAGS = {
       class="flex-wrap text-base font-titleFont grid grid-cols-2 md:grid-cols-4 gap-4 mt-6"
     >
       {
-        Object.values(TAGS).map((tag) => (
-          <li class="flex items-center gap-3">
-            <tag.icon class="size-6" />
-            <span class="text-md">{tag.name}</span>
-          </li>
-        ))
+        Object.values(TAGS)
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((tag) => (
+            <li class="flex items-center gap-3">
+              <tag.icon class="size-6" />
+              <span class="text-md">{tag.name}</span>
+            </li>
+          ))
       }
     </ul>
   </div>

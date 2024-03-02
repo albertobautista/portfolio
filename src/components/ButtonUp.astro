@@ -1,4 +1,4 @@
-<div class="fixed bottom-2 right-2 opacity-0 transition-opacity">
+<div class="fixed bottom-2 right-2 opacity-0 transition-opacity z-20">
   <button
     id="scroll-to-top"
     aria-label="Volver al inicio de la página"
@@ -6,7 +6,7 @@
   >
     <svg
       stroke-width="2"
-      stroke="currentColor"
+      stroke="orange"
       viewBox="0 0 24 24"
       fill="none"
       class="h-6 w-6 -rotate-45 group-hover:-rotate-90 motion-safe:transition"
@@ -21,10 +21,9 @@
 </div>
 
 <script>
-  let timeout: number = 0; // Identificador para clearTimeout
+  let timeout: number = 0;
   const $button = document.getElementById("scroll-to-top");
 
-  // Función para mostrar u ocultar el botón
   function toggleScrollToTop() {
     const scrollTop =
       document.body.scrollTop || document.documentElement.scrollTop;
