@@ -15,21 +15,17 @@ import ButtonUp from "@/components/ButtonUp.astro";
   description="Portafolio de proyectos de Alberto Chávez Bautista"
 >
   <main class="px-4">
-    <Section class="py-16 md:py-36 md:pb-24">
+    <Section
+      class="py-20 md:py-36 md:pb-24 animate-blurred-fade-in animate-duration-slower"
+    >
       <Hero />
     </Section>
   </main>
   <div class="space-y-24 px-4">
-    <Section id="skills">
-      <h2
-        class="flex items-center mb-6 text-2xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <List class="size-6" />
-        Skills
-      </h2>
-      <Skills />
-    </Section>
-    <Section id="projects" class="py-10">
+    <Section
+      id="projects"
+      class="pt-10 animate-blurred-fade-in animate-delay-250"
+    >
       <h2
         class="flex items-center mb-6 text-2xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
@@ -37,6 +33,18 @@ import ButtonUp from "@/components/ButtonUp.astro";
         Projects
       </h2>
       <Projects />
+    </Section>
+    <Section
+      id="skills"
+      class="pb-10 animate-blurred-fade-in animate-delay-400"
+    >
+      <h2
+        class="flex items-center mb-6 text-2xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <List class="size-6" />
+        Skills
+      </h2>
+      <Skills />
     </Section>
     <ButtonUp />
   </div>

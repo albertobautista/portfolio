@@ -112,9 +112,11 @@ const TAGS = {
         Object.values(TAGS)
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((tag) => (
-            <li class="flex items-center gap-3">
+            <li class="flex items-center gap-3 ">
               <tag.icon class="size-6" />
-              <span class="text-md">{tag.name}</span>
+              <span class="text-md hover:scale-105 transition cursor-pointer">
+                {tag.name}
+              </span>
             </li>
           ))
       }
