@@ -3,11 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Section from "@/components/Section.astro";
 import Hero from "@/sections/Hero.astro";
 import Skills from "@/sections/Skills.astro";
-import Briefcase from "@/icons/Briefcase.astro";
 import CodeIcon from "@/icons/Code.astro";
 import List from "@/icons/List.astro";
+import Book from "@/icons/Book.astro";
 import Projects from "@/sections/Projects.astro";
 import ButtonUp from "@/components/ButtonUp.astro";
+import Certifications from "../components/Certifications";
 ---
 
 <Layout
@@ -36,7 +37,7 @@ import ButtonUp from "@/components/ButtonUp.astro";
     </Section>
     <Section
       id="skills"
-      class="pb-10 animate-blurred-fade-in animate-delay-400"
+      class="pt-10 animate-blurred-fade-in animate-delay-400"
     >
       <h2
         class="flex items-center mb-6 text-2xl font-semibold gap-x-3 text-black/80 dark:text-white"
@@ -45,6 +46,19 @@ import ButtonUp from "@/components/ButtonUp.astro";
         Skills
       </h2>
       <Skills />
+    </Section>
+    <Section
+      id="certifications"
+      class="pb-10 animate-blurred-fade-in animate-delay-400"
+    >
+      <h2
+        class="flex items-center mb-6 text-2xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Book class="size-6" />
+        Certifications
+      </h2>
+
+      <Certifications client:load />
     </Section>
     <ButtonUp />
   </div>
