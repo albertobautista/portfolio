@@ -13,20 +13,22 @@
     "webp": "bun ./scripts/convert-all.ts"
   },
   "dependencies": {
-    "image-meta": "0.2.0",
-    "photoswipe": "5.4.3",
     "@appnest/masonry-layout": "2.2.3",
     "@astrojs/check": "^0.5.5",
+    "@astrojs/preact": "3.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.3.5",
-    "@astrojs/preact": "3.1.0",
     "@midudev/tailwind-animations": "^0.0.7",
     "@vercel/analytics": "^1.2.2",
     "astro": "^4.4.3",
+    "image-meta": "0.2.0",
+    "photoswipe": "5.4.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^2.0.4"
+    "@astrojs/partytown": "^2.0.4",
+    "@types/node": "^20.12.5",
+    "@types/bun": "1.0.1"
   }
 }
