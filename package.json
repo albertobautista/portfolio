@@ -21,6 +21,7 @@
     "@midudev/tailwind-animations": "^0.0.7",
     "@types/react": "^18.2.74",
     "@vercel/analytics": "^1.2.2",
+    "preact": "10.19.3",
     "astro": "^4.4.3",
     "image-meta": "0.2.0",
     "photoswipe": "5.4.3",
