@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel/serverless";
+import preact from "@astrojs/preact";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -9,5 +10,5 @@ export default defineConfig({
   adapter: vercel({
     webAnalytics: { enabled: true },
   }),
-  integrations: [tailwind()],
+  integrations: [tailwind(), preact()],
 });
