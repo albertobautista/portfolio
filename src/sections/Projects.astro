@@ -9,8 +9,25 @@ interface Project {
   image: string;
   github: string;
   url: string;
+  isInProgress: boolean;
 }
 const PROJECTS: Project[] = [
+  {
+    title: "Trips Map App",
+    description:
+      " This is a simple app where you can see the location of my visited cities in the world.",
+    tech: [
+      "React",
+      "TypeScript",
+      "CSS",
+      "Google Maps API",
+      "Vercel Deployment",
+    ],
+    image: "/img/projects/trips-map-app.webp",
+    github: "https://github.com/albertobautista/trips-map-react",
+    url: "https://trips-map-react.vercel.app/",
+    isInProgress: true,
+  },
   {
     title: "Games Search App",
     description:
@@ -26,6 +43,7 @@ const PROJECTS: Project[] = [
     image: "/img/projects/games-app.webp",
     github: "https://github.com/albertobautista/game-hub-react",
     url: "https://game-hub-react-five.vercel.app",
+    isInProgress: false,
   },
   {
     title: "Countdown App",
@@ -41,6 +59,7 @@ const PROJECTS: Project[] = [
     image: "/img/projects/countdown.webp",
     github: "https://github.com/albertobautista/miami-countdown",
     url: "https://friends-vacation-countdown.vercel.app/",
+    isInProgress: false,
   },
   {
     title: "Movies App",
@@ -57,6 +76,7 @@ const PROJECTS: Project[] = [
     image: "/img/projects/movies_app.webp",
     github: "https://github.com/albertobautista/movies-nextjs14-app",
     url: "https://movies-nextjs14-app.vercel.app/",
+    isInProgress: false,
   },
   {
     title: "Live News App",
@@ -73,6 +93,7 @@ const PROJECTS: Project[] = [
     image: "/img/projects/live_news.webp",
     github: "https://github.com/albertobautista/live-news-nextjs13",
     url: "https://live-news-nextjs13.vercel.app/",
+    isInProgress: false,
   },
   {
     title: "Club Valle Real de Guadalajara",
@@ -88,6 +109,7 @@ const PROJECTS: Project[] = [
     image: "/img/projects/club_valle_real.webp",
     github: "https://github.com/albertobautista/",
     url: "https://clubvallereal.com",
+    isInProgress: false,
   },
   {
     title: "Baag Landscaping",
@@ -97,6 +119,7 @@ const PROJECTS: Project[] = [
     image: "/img/projects/baag_landscapging.webp",
     github: "https://github.com/albertobautista/",
     url: "https://baag-landscaping.com.mx/",
+    isInProgress: false,
   },
 ];
 ---
@@ -113,12 +136,18 @@ const PROJECTS: Project[] = [
               target="_blank"
               class="w-full xl:w-1/2 h-auto group items-center justify-center flex"
             >
-              <div>
+              <div class="relative">
                 <img
                   src={project.image}
                   alt="amazon"
-                  class="w-full h-full object-contain rounded-xl sm:rounded-xl hover:scale-90 motion-safe:transition"
+                  class="w-full h-full object-contain rounded-xl sm:rounded-xl  motion-safe:transition"
                 />
+
+                {project.isInProgress && (
+                  <div class="absolute bg-orange top-0 left-0 bg-blue-500 text-white px-3 py-1 rounded-br-xl text-sm font-semibold m-2">
+                    In Progress
+                  </div>
+                )}
               </div>
             </a>
             <div class="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end   z-10">
