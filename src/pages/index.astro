@@ -6,9 +6,11 @@ import Skills from "@/sections/Skills.astro";
 import CodeIcon from "@/icons/Code.astro";
 import List from "@/icons/List.astro";
 import Book from "@/icons/Book.astro";
+import Contact from "@/icons/Contact.astro";
 import Projects from "@/sections/Projects.astro";
 import ButtonUp from "@/components/ButtonUp.astro";
 import Certifications from "../components/Certifications";
+import ContactForm from "@/components/ContactForm";
 ---
 
 <Layout
@@ -49,7 +51,7 @@ import Certifications from "../components/Certifications";
     </Section>
     <Section
       id="certifications"
-      class="pb-10 animate-blurred-fade-in animate-delay-400"
+      class="pt-10 animate-blurred-fade-in animate-delay-400"
     >
       <h2
         class="flex items-center mb-6 text-2xl font-semibold gap-x-3 text-black/80 dark:text-white"
@@ -59,6 +61,20 @@ import Certifications from "../components/Certifications";
       </h2>
 
       <Certifications client:load />
+    </Section>
+
+    <Section
+      id="contact"
+      class="pb-10 animate-blurred-fade-in animate-delay-400"
+    >
+      <h2
+        class="flex items-center mb-6 text-2xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Contact class="size-6" />
+        Contact
+      </h2>
+
+      <ContactForm client:load />
     </Section>
     <ButtonUp />
   </div>
