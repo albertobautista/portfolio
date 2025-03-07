@@ -7,10 +7,21 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const { name, email, message } = await request.json();
 
+    const from = process.env.RESEND_FROM_EMAIL;
+    const to = process.env.RESEND_TO_EMAIL;
+
+    if (!from || !to) {
+      return new Response(
+        JSON.stringify({ error: "Missing email configuration" }),
+        { status: 500 }
+      );
+    }
+
     const emailData = {
-      from: process.env.RESEND_FROM_EMAIL,
-      to: process.env.RESEND_TO_EMAIL,
+      from,
+      to,
       subject: `Nuevo mensaje de ${name}`,
+      text: `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #333;">
           <h1 style="color: #4CAF50;">Nuevo mensaje de contacto</h1>
