@@ -70,7 +70,7 @@ const ContactForm = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            class="w-full mb-2 p-2 border rounded text-black"
+            class="w-full mb-2 p-2 border rounded bg-white text-black"
             required
           />
           <input
@@ -79,7 +79,7 @@ const ContactForm = () => {
             placeholder="E-mail"
             value={formData.email}
             onChange={handleChange}
-            class="w-full mb-2 p-2 border rounded text-black"
+            class="w-full mb-2 p-2 border rounded bg-white text-black"
             required
           />
         </div>
@@ -90,7 +90,7 @@ const ContactForm = () => {
           placeholder="Message"
           value={formData.message}
           onChange={handleChange}
-          class="w-full mb-2 p-2 border rounded text-black resize-none"
+          class="w-full mb-2 p-2 border rounded bg-white text-black resize-none"
           required
           rows={4}
         />
