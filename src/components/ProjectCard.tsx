@@ -12,46 +12,53 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <article
       ref={ref}
-      class={`w-full flex flex-col items-center  gap-8 mt-4 ${animationClass}}`}
+      class={`w-full flex flex-col items-center justify-center gap-28 mt-4 ${animationClass}}`}
     >
-      <div class="flex flex-col xl:flex-row gap-6">
+      <div class={`flex flex-col xl:flex-row gap-6`}>
         <a
           href={project.url}
           target="_blank"
-          class="w-full xl:w-1/2 h-auto group flex justify-center"
+          class="w-full xl:w-1/2 h-auto group items-center justify-center flex"
         >
           <div class="relative">
             <img
               src={project.image}
-              alt={project.title}
-              class="w-full h-full object-contain rounded-xl transition"
+              alt="amazon"
+              class="w-full h-full object-contain rounded-xl sm:rounded-xl  motion-safe:transition"
             />
+
             {project.isInProgress && (
-              <span class="absolute top-0 left-0 bg-blue-500 text-white px-3 py-1 rounded-br-xl text-sm font-semibold m-2">
+              <div class="absolute bg-orange top-0 left-0 bg-blue-500 text-white px-3 py-1 rounded-br-xl text-sm font-semibold m-2">
                 In Progress
-              </span>
+              </div>
             )}
           </div>
         </a>
-        <div class="w-full xl:w-1/2 flex flex-col gap-6 items-end">
-          <p class="font-titleFont text-orange text-sm">Featured Project</p>
+        <div class="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end   z-10">
+          <p class="font-titleFont text-orange text-sm tracking-wide">
+            Featured Project
+          </p>
           <h3 class="text-2xl font-bold">{project.title}</h3>
-          <p class="bg-[#EAEDF7] dark:bg-[#112240] text-sm p-4 rounded-md">
+          <p class="bg-[#EAEDF7] dark:bg-[#112240] text-sm md:text-base text-black/80 dark:text-white p-2 md:p-6 rounded-md">
             {project.description}
           </p>
-          {/* <TechList tech={project.tech} /> */}
+          <ul class="flex flex-wrap text-xs md:text-sm font-titleFont tracking-wide gap-2 md:gap-5 justify-between text-black/80 dark:text-white/80">
+            {project.tech.map((tech) => (
+              <li class="hover:scale-105 cursor-pointer">{tech}</li>
+            ))}
+          </ul>
           <div class="text-2xl flex gap-4">
             <a
               href={project.github}
+              class="hover:text-orange duration-300"
               target="_blank"
-              class="hover:text-orange transition duration-300"
             >
               <Github />
             </a>
             <a
               href={project.url}
+              class="hover:text-orange duration-300"
               target="_blank"
-              class="hover:text-orange transition duration-300"
             >
               <LinkIcon />
             </a>
