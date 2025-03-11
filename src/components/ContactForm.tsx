@@ -1,3 +1,4 @@
+import useAnimateOnScroll from "@/hooks/useAnimateOnScroll";
 import { useState, useEffect } from "preact/hooks";
 
 type FormData = {
@@ -53,6 +54,7 @@ const ContactForm = () => {
       setIsSubmitting(false);
     }
   };
+
   useEffect(() => {
     if (status) {
       const timer = setTimeout(() => setStatus(""), 5000);
@@ -60,9 +62,15 @@ const ContactForm = () => {
     }
   }, [status]);
 
+  const { ref, animationClass } = useAnimateOnScroll({
+    threshold: 0.01,
+    animationClass: "animate-blurred-fade-in",
+    once: false,
+  });
+
   return (
     <form onSubmit={handleSubmit}>
-      <div class="flex flex-col gap-4 ">
+      <section ref={ref} class={`flex flex-col gap-4 ${animationClass} `}>
         <div class="flex gap-4">
           <input
             type="text"
@@ -97,7 +105,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={` w-40 bg-orange text-white py-2 rounded-md transition-transform duration-300 ${
+          className={`w-40 bg-orange text-white py-2 rounded-md transition-transform duration-300 ${
             isSubmitting
               ? "cursor-not-allowed opacity-50"
               : "hover:scale-105 hover:bg-blue-700"
@@ -110,7 +118,7 @@ const ContactForm = () => {
             {status}
           </p>
         )}
-      </div>
+      </section>
     </form>
   );
 };
