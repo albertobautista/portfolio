@@ -13,11 +13,7 @@ const ProjectsList = ({ projects }: ProjectListProps) => {
   return (
     <section class="flex flex-col items-center gap-8 mt-2 w-full">
       {projectsList.map((project, index) => (
-        <ProjectCard
-          key={project.title}
-          project={project}
-          direction={index % 2 === 0 ? "left" : "right"}
-        />
+        <ProjectCard key={project.title} project={project} />
       ))}
     </section>
   );
