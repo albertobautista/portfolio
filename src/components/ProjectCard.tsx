@@ -3,7 +3,13 @@ import useAnimateOnScroll from "@/hooks/useAnimateOnScroll";
 import Github from "@/icons/Github.tsx";
 import LinkIcon from "@/icons/Link.tsx";
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({
+  project,
+  direction,
+}: {
+  project: Project;
+  direction: "left" | "right";
+}) => {
   const { ref, animationClass } = useAnimateOnScroll({
     threshold: 0.01,
     animationClass: "animate-blurred-fade-in",
@@ -14,7 +20,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
       ref={ref}
       class={`w-full flex flex-col items-center justify-center gap-28 mt-4 ${animationClass}}`}
     >
-      <div class={`flex flex-col xl:flex-row gap-6`}>
+      <div
+        class={`flex flex-col xl:${
+          direction === "left" ? "flex-row-reverse" : "flex-row"
+        } gap-6`}
+      >
         <a
           href={project.url}
           target="_blank"
@@ -23,7 +33,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <div class="relative">
             <img
               src={project.image}
-              alt="amazon"
+              alt={project.title}
               class="w-full h-full object-contain rounded-xl sm:rounded-xl  motion-safe:transition"
             />
 
@@ -34,11 +44,21 @@ const ProjectCard = ({ project }: { project: Project }) => {
             )}
           </div>
         </a>
-        <div class="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end   z-10">
-          <p class="font-titleFont text-orange text-sm tracking-wide">
+        <div class="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end z-10">
+          <p
+            class={`font-titleFont text-orange text-sm tracking-wide w-full flex ${
+              direction === "right" ? "justify-end" : "justify-start"
+            }`}
+          >
             Featured Project
           </p>
-          <h3 class="text-2xl font-bold">{project.title}</h3>
+          <h3
+            class={`text-2xl font-bold w-full flex ${
+              direction === "right" ? "justify-end" : "justify-start"
+            }`}
+          >
+            {project.title}
+          </h3>
           <p class="bg-[#EAEDF7] dark:bg-[#112240] text-sm md:text-base text-black/80 dark:text-white p-2 md:p-6 rounded-md">
             {project.description}
           </p>
@@ -47,7 +67,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
               <li class="hover:scale-105 cursor-pointer">{tech}</li>
             ))}
           </ul>
-          <div class="text-2xl flex gap-4">
+          <div
+            class={`text-2xl flex gap-4 w-full ${
+              direction === "right" ? "justify-end" : "justify-start"
+            }`}
+          >
             <a
               href={project.github}
               class="hover:text-orange duration-300"
