@@ -2,10 +2,5 @@
   "buildCommand": "npm run build",
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "src/pages/api/**/*.ts": {
-      "runtime": "nodejs24.x"
-    }
   }
 }
