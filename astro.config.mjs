@@ -12,6 +12,7 @@ export default defineConfig({
   output: "server",
   adapter: vercel({
     webAnalytics: { enabled: true },
+    nodeVersion: "24.x",
   }),
   integrations: [tailwind(), preact()],
 });
